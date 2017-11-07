@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <StartArguments>-p ../../../../protobuf/as3output -o ../../../../HotFixProto/proto.cs -c ../../../../AS3ProtoBuf_Unity/Assets/StreamingAssets/proto.cswc</StartArguments>
+  </PropertyGroup>
+</Project>

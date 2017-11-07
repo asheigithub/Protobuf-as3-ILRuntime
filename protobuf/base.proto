@@ -1,0 +1,438 @@
+package SProtoSpace;
+
+enum UserStatus
+{
+	OFFLINE = 0;
+	ONLINE = 1;
+}
+
+//main task
+message main_task_info
+{
+	required int32 taskid = 1;
+	required int32 taskstate = 2;
+	required uint32 curnum = 3;
+}
+
+enum eCommonDefine
+{
+	max_role_hero_size  = 128;
+	max_role_bag_size   = 2048;
+	max_hero_symbol_size = 6;
+	max_role_skill_size = 12;
+	max_role_friends_size = 50;
+	max_hero_model_size = 3;
+	max_daily_activity_size = 32;
+	max_team_heros_size     = 1;
+	max_rs_reward_size		= 10;
+	max_largemap_box_size	= 256;
+	max_sevenday_activity_size = 700;
+}
+
+// create player name result
+enum eCreateResult
+{
+	create_result_ok = 0;
+	create_result_fail = 1;
+	create_result_duplicate = 2;
+	create_result_sensitive_word = 3;
+	create_result_state_error = 4;
+}
+
+message backup_force_info
+{
+	required int32 total_attr_hp = 1;
+	required int32 total_attr_attack = 2;
+	required int32 total_attr_defense= 3;
+	required int32 total_attr_crit = 4;
+	required int32 total_attr_crit_defense = 5;
+	required int32 total_attr_hit = 6;
+	required int32 total_attr_dodge = 7;
+	required int32 total_attr_penetration = 8;
+	required int32 total_attr_penetration_def = 9;
+	required int32 total_attr_revover = 10;
+	required int32 total_attr_treat =11;
+	required int32 total_attr_vampire = 12;
+	required int32 total_attr_critical =13;
+	required int32 total_attr_attack_speed = 14;
+	
+	required int32 total_attr_move_speed = 15;
+	required int32 total_attr_skill_cd = 16;
+	required int32 total_attr_damage_add = 17;
+	required int32 total_attr_damage_reduce = 18;
+	
+	required int32 total_partial_attr_hp = 19;
+	required int32 total_partial_attr_attack = 20;
+	required int32 total_partial_attr_defense= 21;
+}
+message friend_base_info
+{
+	optional uint64 player_id = 1;
+	optional string player_name = 2;
+	optional int32 player_lv = 3;
+	optional int32 template_id = 4;
+	optional int32 vip_lv    = 5;
+	optional string society_name = 6;	
+	optional int32 total_ability = 7;
+	optional bool is_new_msg = 8;
+	optional bool is_friend = 9;
+	optional uint32 offline_time = 10;
+	optional bool is_can_give = 11;
+	optional uint32 data_type = 12[default = 0];
+	optional int32 caravan_id = 13[default = 0];
+}
+
+message player_info_ntf
+{
+	optional friend_base_info info = 1;
+}
+
+// globalserver and arena hero info
+message player_hero_info
+{
+	required uint32 id = 1;
+	optional int32  level = 2;
+	optional int32  starnum = 3;
+	optional int32  quality = 4;
+	repeated hero_skill_info skills = 5;
+	// new add, hero equip
+	repeated uint32 equips = 6;
+	optional int32 hp_percent = 7;
+	optional int32 hp = 8;
+	optional int32 max_hp = 9;
+}
+
+enum EAreaState
+{
+	AREA_STATE_GOOD = 1;
+	AREA_STATE_BUSY = 2;
+	AREA_STATE_CROWD =3;
+	AREA_STATE_MAINTENANCE = 4;
+}
+
+// gate net info
+message gate_net_info
+{
+	required uint32 id = 1;
+	required string ip = 2;
+	required int32 port = 3;
+	required string group_name = 4;
+	required bool new = 5;
+	required int32 state = 6; 
+	required uint32 groupindex = 7;  
+}
+
+// group of area
+message group_area_info
+{
+	repeated uint32 groupids = 1;
+	required string area_group_name = 2;
+}
+
+// group of area
+message group_hero_info
+{
+	required uint32 groupid = 1;
+	required uint32 heroid 	= 2;
+	required uint32 lev 	= 3;
+}
+
+
+
+message player_leave_game_ntf
+{
+    required uint64 id            = 1;
+    required uint32 accountid     = 2;
+    required uint32 groupid       = 3;
+    required uint32 level         = 4;
+    required uint32 heroid        = 5;
+    required uint32 lastlogindate = 6;          
+}
+
+message common_protocol_forwarded_req
+{
+	required bytes packet_data = 1;
+}
+
+message common_protocol_forwarded_ack
+{
+	required bytes packet_data = 1;
+}
+
+
+message db_role_base_info
+{
+	required int32 level = 1;                 // level
+	required int32 gameid = 2;                // game id
+	required string account = 3;              // account
+	required uint32 vp = 4;                   // energy
+	required uint32 vp_update_time = 5;       // energy update time
+	required uint32 exp = 6;                  // exp
+	optional uint32 coin = 7;                 // coin
+	optional uint32 diamond = 8;             // diamond
+	optional int32  viplevel= 9;             // vip level
+	optional int32  vipexp = 10;              // vip exp
+	optional uint32 lastleavetime = 11;       // last leave time
+	optional int32 decompose_coin = 12;	  	// star up exp
+}
+// hero skill
+message hero_skill_info
+{
+	required uint32 id = 1;
+	optional int32 level = 2;
+}
+message role_bag_info
+{
+	required uint32 templateid = 1;  // template
+	optional int32  num = 2;         // num
+	optional int32  star = 3;        // star
+	optional int32  level = 4;       // level
+	optional int32  cur_max_level = 5;
+	optional int32  cur_max_stars = 6;
+	optional int32  star_exp = 7;
+}
+	
+
+// hero equip
+message hero_equip_info
+{
+	required int32  equip_pos = 1;
+	required uint32 item_index = 2;
+}
+
+// hero symbol
+message hero_symbol_info
+{
+	required int32  symbol_pos = 1;
+	required uint32 item_index = 2;
+}
+
+
+// role hero
+message role_hero_info
+{
+	required uint32 id = 1;    // template id
+
+	// base data
+	optional int32  level = 2;
+	optional int32  hp = 3;
+	optional uint32 exp = 4;
+	optional int32  starnum = 10;
+	optional int32  quality = 11;
+
+	// skills
+	repeated hero_skill_info skills = 12;
+
+	// fix equips
+	repeated hero_equip_info equips = 13;
+	
+	repeated hero_symbol_info symbols = 14;
+
+	// arena flag
+	optional int32  arena_flag = 15;
+	optional int32  bit_destiny = 16;
+}
+message role_base_info
+{
+	optional int32 level = 1;                 // level
+	optional int32 commonscene = 2;           // common scene
+	optional int32 hardscene = 3;             // hard scene
+	optional string account = 4;              // account
+	optional uint32 heroid = 5;               // select hero tmp id
+	optional uint32 vp = 6;                   // energy
+	optional uint32 vp_update_time = 7;       // energy update time
+	optional uint32 exp = 8;                  // exp
+	optional uint32 coin = 9;                 // coin
+	optional uint32 diamond = 10;             // diamond
+	optional int32  viplevel= 11;             // vip level
+	optional int32  vipexp = 12;              // vip exep
+	optional uint32 lastleavetime = 13;       // last leave time
+
+	optional uint32 onemoneycardingtime = 14; // one carding time
+	optional int32  onemoneycardingcount = 15;
+
+	optional uint32 tenmoneycardingtime = 16; // ten carding time
+	optional int32  tenmoneycardingcount= 17;
+
+	optional uint32 onegoldcardingtime = 18;  // one carding time
+	optional int32  onegoldcardingcount = 19;
+
+	optional uint32 tengoldcardingtime = 20;  // ten carding time
+	optional int32  tengoldcardingcount= 21;
+	
+	optional uint32 oneequipmoneycardingtime = 22; // one equip carding time
+	optional int32  oneequipmoneycardingcount = 23;
+
+	optional uint32 tenequipmoneycardingtime = 24; // ten equip carding time
+	optional int32  tenequipmoneycardingcount= 25;
+
+	optional uint32 oneequipgoldcardingtime = 26;  // one equip carding time
+	optional int32  oneequipgoldcardingcount = 27;
+
+	optional uint32 tenequipgoldcardingtime = 28;  // ten equip carding time
+	optional int32  tenequipgoldcardingcount= 29;
+
+	optional uint32 diamond2cointime = 30;    // diamond to coin last time
+	optional int32  diamond2coincount = 31;   // diamond to coin count
+
+	optional uint32 diamond2energytime = 32;  // diamond to energy time
+	optional int32  diamond2energycount= 33;  // diamond to energy count
+
+	optional int32  skillnum = 34;            // skill num
+	optional uint32 skillnum_update_time = 35;// skill num update time
+
+	optional uint32 diamond2skillnumtime= 36; // skill time
+	optional int32  diamond2skillnumcount=37; // skill count
+
+	optional uint32 worldchattime = 38;       // world chat time
+	optional int32  worldchatcount = 39;      // world chat count
+
+	optional uint32 arenatime = 40;           // arean time
+	optional int32  arenacount= 41;           // arena count
+
+	optional uint32 arenacdtime = 42;         // cd time
+	optional int32  arenacdvalue= 43;         // cd value
+
+	optional uint32 arena_resetcd_time = 44;  // reset cd time
+	optional int32  arena_resetcd_count= 45;  // reset cd count
+
+	optional uint32 arena_buycount_time= 46;  // buy count time
+	optional int32 arena_buycount_num = 47;   // buy count num
+	optional int32 arena_coin = 48;           // arena coin
+
+	optional int32 title_id = 49;             // title id
+	optional int32 title_credit = 50;         // title credit 
+	optional int32 title_star = 51;           // title star
+
+	optional int32 sign_week_days = 52; 		// week sign days accumulated
+	optional uint32 sign_week_last_time = 53;	// week last sign time
+	optional int32 sign_month_days = 54;		// month sign days accumulated
+	optional uint32 sign_month_last_time = 55;	// month sign sign time
+	optional int32 resign_month_days = 56;		// month sign sign time
+	repeated int32 period_prize_days = 57; 		// continuous sign prize
+	optional int32 decompose_coin = 58;		// decompose coin
+	optional int32 moba_coin = 59;				// moba coin
+	optional int32 moba_exp = 60;				// moba exp
+	optional int32 moba_point = 61;				// moba point
+	optional int32 today_mobacoin = 62;			// today already add moba coin
+	optional int32 today_mobaexp = 63;			// today already add moba exp
+	optional int32 today_teamcoin = 64;			// today already add coin
+
+	optional int32 vip_signed_days = 65;		// vip sign days accumulated
+
+	optional uint32 crystal               = 66;   // crystal
+	optional uint32 crystal_update_time   = 67;   // crystal update time	
+	optional uint32 crystal_output_second = 68;   // crystal output sceond
+	optional uint32 diamond2crystaltime   = 69;   // diamond to crystal last time
+	optional int32  diamond2crystalcount  = 70;   // diamond to crystal count
+
+	optional uint32 vigour                = 71;   // vigour
+	optional uint32 vigour_update_time    = 72;   // vigour update time
+	
+	optional uint32 diamond2vigourtime    = 73;   // diamond to vigour time
+	optional uint32 diamond2vigourcount   = 74;   // diamond to vigour count		
+
+	//resource
+	optional int32 rs_exp	 			  = 75;	
+	repeated int32 rs_received_reward_id  = 76;
+	optional int32 rs_received_reward_lv  = 77[default = 1];	
+
+	// dungeon
+	optional uint32 dungeon_buycount_time   = 78;  
+	optional int32  dungeon_buycount_num    = 79;
+
+	// peerage
+	optional int32  peerage_avatar_id    	= 80;	
+	optional int32  peerage_lev    			= 81;
+	optional int32  peerage_exp             = 82;	
+
+	// carding
+	optional int32  money_card_hero_num		= 83;
+	optional int32  gold_card_hero_num      = 84;	
+	
+	optional int32  arena_unread_flag		= 85;
+
+	optional uint32 zodiac_soul   		    = 86;
+	optional int32 lottery_total_times   	= 87;
+	optional int32 lottery_free_num			= 88;
+	optional int32 lottery_free_time 		= 89;
+	optional int32 magic_crystal 			= 90;
+	optional int32 big_award_count_down 	= 91;
+	optional uint32 max_vp 					= 92;
+	optional uint32 unlocked_chapter_id     = 93;
+	optional uint32 unlocked_world_fog_id   = 94;
+	optional int32  liangcao                = 95;
+	optional int32 player_camp = 96[default = 0];
+	optional int32 country_lv = 97[default = 0];
+	optional int32  free_phantom		 =98;
+	optional int32	can_gain_phantom_exp 	= 99;	
+
+}
+
+
+
+
+enum base_msg_id
+{
+	name_check_id = 1;
+	name_check_ack_id = 2;
+
+	change_name_check_id = 3;
+	change_name_check_ack_id = 4;
+
+	player_leave_game_ntf_id = 5;
+	
+	common_protocol_id = 2000;
+	common_protocol_forwarded_req_id = 2100;
+	common_protocol_forwarded_ack_id = 2101;	
+}
+
+message iteminfo
+{
+    required int32  type = 1; // type
+	required uint32 id = 2;   // template id
+	required int32  num = 3;   // num
+	optional int32  resolve_hero_id = 4[default = 0]; // hero	id be resolve
+}
+
+message dungeon_team_player
+{
+	required uint64 llId  		   = 1;
+	optional string name  		   = 2;
+	optional int32  state  		   = 3;	
+	optional int32  hero_id  	   = 4;
+	optional int32  hero_level     = 5;
+	optional int32  hero_star  	   = 6;
+	optional int32  hero_quality   = 7;
+	optional uint32 battle_ability = 8;
+	optional int32  pos            = 9;  // 0 ~ 4
+	optional int32  server_id      = 10;
+	optional bool   is_robot       = 11; 
+}
+
+message name_check
+{
+	required string name = 1;
+	optional string attach = 2;
+}
+
+message name_check_ack
+{
+	required string name = 1;
+	required int32 ret = 2;
+	optional string attach = 4;
+}
+
+enum eKickoutReason
+{
+	KickoutReason_login = 1; //登录
+}
+enum ECrossServerType
+{
+	BACK_NORMAL_SERVER = 0;
+	CROSS_LOCAL_SERVER = 1;
+	CROSS_GLOBAL_SERVER = 2;
+}
+
+
+

@@ -1,0 +1,55 @@
+using System;
+
+namespace SProtoSpace
+{
+	public class name_check_ack : AS3Proto.Message
+	{
+		public name_check_ack()
+		{
+			createAs3Object("SProtoSpace.name_check_ack");
+		}
+
+		private name_check_ack(ASBinCode.rtData.rtObject rtObject)
+		{
+			setAs3Object(rtObject);
+		}
+
+		internal name_check_ack Create(ASBinCode.rtData.rtObject rtObject)
+		{
+			return new name_check_ack(rtObject);
+		}
+
+
+		public string name ;
+		public int ret ;
+		public void clearAttach()
+		{
+			player.invokeMethod(as3Object, "clearAttach");
+		}
+		
+		public bool hasAttach
+		{
+			get { return (bool)player.getMemberValue(as3Object, "hasAttach"); }
+		}
+		private string _attach;
+		public string attach
+		{
+			get { return _attach; }
+			set { player.setMemberValue(as3Object, "attach", value); _attach = value; }
+		}
+
+		protected override void afterMergeFrom()
+		{
+			name = (string)player.getMemberValue(as3Object, "name");
+			ret = (int)player.getMemberValue(as3Object, "ret");
+			
+		}
+
+		protected override void beforeWriteTo()
+		{
+			player.setMemberValue(as3Object, "name", name);
+			player.setMemberValue(as3Object, "ret", ret);
+		}
+
+	}
+}

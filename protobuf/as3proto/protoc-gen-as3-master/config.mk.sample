@@ -1,0 +1,17 @@
+PROTOBUF_VERSION=2.4.1
+PROTOBUF_DIR=../protobuf-$(PROTOBUF_VERSION)
+ifeq ($(OS), Windows_NT)
+BAT=.bat
+EXE=.exe
+PATH_SEPARATOR=;
+else
+PATH_SEPARATOR=:
+endif
+COMPC=compc$(BAT)
+MXMLC=mxmlc$(BAT)
+ASDOC=asdoc$(BAT)
+FDB=fdb$(BAT)
+MVN=mvn
+JAVAC=javac
+JAR=jar
+HAXE=haxe

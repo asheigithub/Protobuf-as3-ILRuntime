@@ -1,0 +1,11 @@
+﻿				{
+					var value = ___[CNAME];
+					if (value != null)
+					{
+						player.setMemberValue(as3Object, "[NAME]", LoadBindObjectAndWriteField(value));
+					}
+					else
+					{
+						player.setMemberValue(as3Object, "[NAME]", null);
+					}
+				}

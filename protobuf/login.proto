@@ -1,0 +1,103 @@
+import "base.proto";
+package SProtoSpace;
+enum EAuthType
+{
+	AUTH_SELF =  0;                // login_req
+    AUTH_XIAOMI =  1;                // login_req
+}
+message login_req
+{
+    required string account = 1;
+    required string password = 2;
+    optional bool   isdetail = 3;
+	optional string userid = 4;
+	optional string usersession = 5;
+	optional EAuthType loginType = 6;
+	required protoId   testEnum =7;
+}
+
+message login_ack
+{
+    required int32 ret = 1;
+	repeated EAuthType authtypelist =2;
+}
+
+message area_list_info_ack
+{
+    // group net info
+    repeated gate_net_info group_net_info = 1;
+    
+    // account return
+    required string account = 2;
+    
+    // check center server id
+    optional uint32 check_server_id = 3;
+
+    repeated group_area_info area_groups = 4;
+    repeated group_area_info recommend_areas  = 5;
+    optional group_area_info my_login_areas   = 6;
+    repeated group_hero_info my_group_players = 7;
+}
+
+message login_need_queued_ntf
+{
+	required uint32 pos = 1;
+}
+
+message login_end_queued_ntf
+{
+
+}
+
+message login_queued_state_req
+{
+}
+
+message login_queued_state_ack
+{
+	required uint32 pos = 1;
+}
+
+message login_cancel_queue_req
+{
+}
+
+message login_cancel_queue_ack
+{
+}
+
+
+enum protoId
+{
+    LOGIN_REQ_ID =  0;                // login_req
+    LOGIN_ACK_ID = 1;                 // login_ack
+    area_list_info_ack_id = 2;        // area list info ack
+	login_need_queued_ntf_id = 3;     // need queued
+	login_end_queued_ntf_id = 4;      // end queued
+	login_queued_state_req_id = 5;  // req queued state
+	login_queued_state_ack_id = 6;  // ack queued state
+	login_cancel_queue_req_id = 7;  // cancel queue req
+	login_cancel_queue_ack_id = 8;  // cancel queue ack
+}
+
+// login ack return
+enum login_ack_error
+{
+    // unkown error, client care
+    CHECK_ACCOUNT_UNKNOW = -3;
+
+    // account error,, client care
+    CHECK_ACCOUNT_INVALID = -2;
+
+    // password and user unmatch, client care
+    CHECK_PASSWORD_ERROR = -1;
+ 
+    // ok
+    CHECK_PASSWORD_OK = 0;
+
+    // new user ok
+    CHECK_PASSWORD_NEW_USER_OK = 1;
+
+    // check ok, client care
+    CHECK_ALL_OK = 2;
+}

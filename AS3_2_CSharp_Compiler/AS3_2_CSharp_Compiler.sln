@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AS3_2_CSharp_Compiler", "AS3_2_CSharp_Compiler\AS3_2_CSharp_Compiler.csproj", "{9B92C11D-FE58-403B-AC9E-27EAA1494CEC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9B92C11D-FE58-403B-AC9E-27EAA1494CEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B92C11D-FE58-403B-AC9E-27EAA1494CEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B92C11D-FE58-403B-AC9E-27EAA1494CEC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9B92C11D-FE58-403B-AC9E-27EAA1494CEC}.Debug|x86.Build.0 = Debug|Any CPU
+		{9B92C11D-FE58-403B-AC9E-27EAA1494CEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B92C11D-FE58-403B-AC9E-27EAA1494CEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B92C11D-FE58-403B-AC9E-27EAA1494CEC}.Release|x86.ActiveCfg = Release|Any CPU
+		{9B92C11D-FE58-403B-AC9E-27EAA1494CEC}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E35D59DE-BB05-4EC7-97BB-898E4585066D}
+	EndGlobalSection
+EndGlobal

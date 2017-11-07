@@ -1,0 +1,14 @@
+F:\protobuf-as3-unity\HotFixProto\bin\Debug\HotFixProto.dll
+F:\protobuf-as3-unity\HotFixProto\bin\Debug\HotFixProto.pdb
+F:\protobuf-as3-unity\HotFixProto\obj\Debug\HotFixProto.csproj.CoreCompileInputs.cache
+F:\protobuf-as3-unity\HotFixProto\obj\Debug\HotFixProto.dll
+F:\protobuf-as3-unity\HotFixProto\obj\Debug\HotFixProto.pdb
+F:\protobuf-as3-unity\HotFixProto\obj\Debug\HotFixProto.csprojResolveAssemblyReference.cache
+F:\protobuf-as3-unity\AS3ProtoBuf_Unity\Assets\StreamingAssets\HotFixProto.dll
+F:\protobuf-as3-unity\AS3ProtoBuf_Unity\Assets\StreamingAssets\HotFixProto.pdb
+F:\protobuf-as3-unity\Protobuf-as3-ILRuntime\AS3ProtoBuf_Unity\Assets\StreamingAssets\HotFixProto.dll
+F:\protobuf-as3-unity\Protobuf-as3-ILRuntime\AS3ProtoBuf_Unity\Assets\StreamingAssets\HotFixProto.pdb
+F:\protobuf-as3-unity\Protobuf-as3-ILRuntime\HotFixProto\obj\Debug\HotFixProto.csprojResolveAssemblyReference.cache
+F:\protobuf-as3-unity\Protobuf-as3-ILRuntime\HotFixProto\obj\Debug\HotFixProto.csproj.CoreCompileInputs.cache
+F:\protobuf-as3-unity\Protobuf-as3-ILRuntime\HotFixProto\obj\Debug\HotFixProto.dll
+F:\protobuf-as3-unity\Protobuf-as3-ILRuntime\HotFixProto\obj\Debug\HotFixProto.pdb

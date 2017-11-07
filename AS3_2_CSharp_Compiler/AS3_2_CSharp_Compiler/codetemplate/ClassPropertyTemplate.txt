@@ -1,0 +1,28 @@
+﻿		private [PROPERTYTYPE] ___[CNAME]; private bool ___[CNAME]flag___;
+		public [PROPERTYTYPE] [CNAME]
+		{
+			get
+			{
+				if (___[CNAME] == null && !___[CNAME]flag___)
+				{
+					___[CNAME]flag___ = true;
+					var obj = player.getMemberValue(as3Object, "[NAME]");
+					if(obj !=null)
+						___[CNAME] = [PROPERTYTYPE].Create(obj);
+				}
+
+				return ___[CNAME];
+			}
+			set
+			{
+				___[CNAME] = value;
+				if (value != null)
+				{
+					player.setMemberValue(as3Object, "[NAME]", LoadBindObject(value));
+				}
+				else
+				{
+					player.setMemberValue(as3Object, "[NAME]", null);
+				}
+			}
+		}

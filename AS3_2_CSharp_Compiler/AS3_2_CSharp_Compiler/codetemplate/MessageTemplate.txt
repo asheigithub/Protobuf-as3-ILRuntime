@@ -1,0 +1,27 @@
+﻿namespace [PACKAGE]
+{
+	public class [CLASSNAME] : AS3Proto.Message
+	{
+		public [CLASSNAME]()
+		{
+			createAs3Object("[AS3PROTOTYPE]");
+		}
+
+		private [CLASSNAME](ASBinCode.rtData.rtObject rtObject)
+		{
+			setAs3Object(rtObject);
+		}
+
+		internal static [CLASSNAME] Create(object rtObject)
+		{
+			return new [CLASSNAME]((ASBinCode.rtData.rtObject)rtObject);
+		}
+
+
+[CONTENT]
+
+[afterMergeFrom]
+
+[beforeWriteTo]
+	}
+}

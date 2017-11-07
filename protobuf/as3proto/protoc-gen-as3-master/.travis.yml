@@ -1,0 +1,44 @@
+language: haxe
+
+cache:
+  directories:
+    - $HOME/.m2
+
+addons:
+  apt:
+    packages:
+    - protobuf-compiler
+
+before_install:
+  - wget http://download.macromedia.com/pub/flex/sdk/flex_sdk_3.6.zip
+  - unzip -d $HOME/flex_sdk flex_sdk_3.6.zip
+
+install:
+  - haxelib install haxelib-run
+  - git clone --branch v2.4.1 --depth 1 https://github.com/google/protobuf.git
+  - |
+    echo '
+    PROTOBUF_VERSION=2.4.1
+    PROTOBUF_DIR=protobuf
+    PROTOC=protoc
+    ifeq ($(OS), Windows_NT)
+    BAT=.bat
+    EXE=.exe
+    PATH_SEPARATOR=;
+    else
+    PATH_SEPARATOR=:
+    endif
+    COMPC=$(HOME)/flex_sdk/bin/compc$(BAT)
+    MXMLC=$(HOME)/flex_sdk/bin/mxmlc$(BAT)
+    ASDOC=$(HOME)/flex_sdk/bin/asdoc$(BAT)
+    FDB=$(HOME)/flex_sdk/bin/fdb$(BAT)
+    MVN=mvn
+    JAVAC=javac
+    JAR=jar
+    HAXE=haxe
+    ' > config.mk
+  - mkdir -p protobuf/java/target
+  - wget --output-document=protobuf/java/target/protobuf-java-2.4.1.jar http://central.maven.org/maven2/com/google/protobuf/protobuf-java/2.4.1/protobuf-java-2.4.1.jar
+
+script:
+  - make

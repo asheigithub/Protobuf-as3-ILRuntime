@@ -1,0 +1,206 @@
+import "base.proto";
+package SProtoSpace;
+
+enum eEnterGameAck
+{
+	ENTER_GAME_SUCC = 0;
+	ENTER_GAME_CAN_NOT_FIND_ROLE = 1;
+	ENTER_GAME_STATE_ERROR = 2;
+	ENTER_GAME_CAN_NOT_FIND_GAME = 3;
+	ENTER_GAME_IN_BATTLE = 4;
+} 
+// hero equip position
+enum eHeroEquipPos
+{
+	EQUIP_HAND = 0;  // hand
+	EQUIP_HEAD = 1;  // head
+	EQUIP_UPBODY=2;  // up
+	EQUIP_ARM   =3;  // arm
+	EQUIP_WAIST =4;  // waist
+	EQUIP_SHOULDER=5;// shoulder
+	EQUIP_FEET = 6;  // feet
+	EQUIP_LEG = 7;   // leg
+	EQUIP_SIZE= 8;   // size
+}
+// tick notify
+message account_repeated_tick_ntf
+{
+}
+
+// terminate to reconnect in check
+message reconnect_to_check_info_req
+{
+	required uint64 llid = 1;
+    required string account = 2;
+}
+
+message reconnect_to_check_info_ack
+{
+	required int32 ret = 1; // 0 ok, else fail
+}
+
+message gate_need_queued_ntf
+{
+	required uint32 pos = 1;
+}
+
+message gate_end_queued_ntf
+{
+}
+
+message gate_queued_state_req
+{
+}
+
+message gate_queued_state_ack
+{
+	required uint32 pos = 1;
+}
+
+message gate_cancel_queue_req
+{
+}
+
+message gate_cancel_queue_ack
+{
+}
+
+// enter game ack
+message enter_game_ack
+{
+	required int32 ret = 1; // eEnterGameAck
+	optional db_role_base_info base = 2;
+}
+
+// create a role of a certain game
+message create_role_of_game
+{
+        // account id
+	required string account = 1;
+        
+        // player name
+	required string playername = 2; 
+}
+
+// create_role_of_game ack
+message create_role_of_game_ack
+{
+        // eCreateResult
+	required int32 create_ret = 4;
+	optional string account = 1;
+	required string playername = 3;
+	optional uint64 playerid = 5; 
+}
+
+message change_name_check
+{
+	required string new_name = 1;
+	required string old_name = 2;
+	required uint32 clientid = 3;
+}
+
+message change_name_check_ack
+{
+	required string new_name = 1;
+	required string old_name = 2;
+	required uint32 clientid = 3;
+	required int32 ret = 4; 
+}
+
+// client connect in to verify its identity
+message role_connect_in_req
+{
+    // account id
+	required uint64 playerid = 1;
+	required string account = 2;
+        // check server id
+	optional uint32 check_server_id = 3;
+}
+
+// player base info return to client
+message group_player_info
+{
+        // player uuid
+	required uint64 playerid = 1;
+
+        // player name
+	optional string playername = 2;
+}
+
+// enter game request
+message enter_game_req
+{
+	required uint64 playerid = 2;
+}
+
+// random name req
+message rand_names_req
+{
+
+}
+// random names ack
+message rand_names_ack
+{
+        // return name array
+	repeated string names = 1;
+}
+message beat_heart_ntf
+{
+}
+
+message gate_test_req
+{
+	optional int64 send_time = 2[default = 0];
+}
+
+message gate_test_ack
+{
+	optional int32 ret = 1[default = 0];
+	optional int64 send_time = 2[default = 0];
+}
+message change_name_ack
+{
+	optional string name = 1;
+	required int32 ret = 2;
+}
+
+message player_leave_game_req
+{
+}
+
+message sync_time_ntf
+{
+	required uint32 time = 1;
+}
+
+enum eMsgId1
+{
+	group_player_info_id 					  = 21;
+	role_connect_in_req_id 					  = 22;
+	create_role_of_game_id 					  = 23;
+	create_role_of_game_ack_id 				  = 24;
+	enter_game_req_id 						  = 25;
+	reconnect_to_check_info_req_id 			  = 26;
+	reconnect_to_check_info_ack_id 			  = 27;
+	enter_game_ack_id 						  = 29;
+	player_leave_game_req_id 				  = 31;
+	
+	// random name
+	rand_names_req_id 						  = 32;
+	rand_names_ack_id 						  = 33;
+	
+	beat_heart_ntf_id 						  = 737;
+	gate_test_req_id						  = 820;
+	gate_test_ack_id						  = 821;
+	
+	sync_time_ntf_id 						  = 130;
+    account_repeated_tick_ntf_id 			  = 134;
+	change_name_req_id 						  = 141;
+	change_name_ack_id 						  = 142;
+	gate_need_queued_ntf_id 				  = 4930;
+	gate_end_queued_ntf_id 					  = 4931;
+	gate_queued_state_req_id 				  = 4932;
+	gate_queued_state_ack_id 				  = 4933;
+	gate_cancel_queue_req_id 				  = 4934;
+	gate_cancel_queue_ack_id 				  = 4935;
+}
