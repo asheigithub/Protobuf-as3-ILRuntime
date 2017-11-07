@@ -1,8 +1,9 @@
- 
+   
 # Protobuf-as3-ILRuntime
-将protobuf-as3移植到ILRuntime中使用。支持protobuf-as3的全部功能,支持Unity5.X
+将protobuf-as3移植到ILRuntime中使用。支持protobuf-as3的全部功能,支持Unity5.X  
+支持 optional ,repeat ,enum。 protobuf-as3版本需求 protobuf 2.5以上 但 3.0特性未支持。  
 
-
+##运行原理
 使用AS3解释器解释protobuf-as3版，来使用protobuf.由于完全不涉及反射, 因此可直接在ILRuntime中使用。
 
 执行AS3使用的是我编写的AS3编译器。   
