@@ -17,3 +17,4 @@ protobuf-as3版来自网易的开源protobuf-as3。
 请先配置 protobuf-as3的执行环境。
 
 protobuf目录中有一个  调用protobuf-as3并生成C#.bat ,执行此bat即可生成所需代码
+
