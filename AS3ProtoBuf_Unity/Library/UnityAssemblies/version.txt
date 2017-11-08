@@ -1,5 +1,5 @@
 5.6.2f1:3.3.0.2
-Android
+StandaloneWindows
 D:/Program Files/Unity56/Editor/Data/Managed/UnityEngine.dll
 D:/Program Files/Unity56/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll
 D:/Program Files/Unity56/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll
@@ -11,3 +11,17 @@ D:/Program Files/Unity56/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor
 D:/Program Files/Unity56/Editor/Data/Managed/UnityEditor.dll
 D:/Program Files/Unity56/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll
 D:/Program Files/Unity56/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Common.dll
+D:/Program Files/Unity56/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll
+D:/Program Files/Unity56/Editor/Data/UnityExtensions/Unity/GUISystem/Editor/UnityEditor.UI.dll
+D:/Program Files/Unity56/Editor/Data/UnityExtensions/Unity/Networking/Editor/UnityEditor.Networking.dll
+D:/Program Files/Unity56/Editor/Data/UnityExtensions/Unity/TestRunner/Editor/UnityEditor.TestRunner.dll
+D:/Program Files/Unity56/Editor/Data/UnityExtensions/Unity/TreeEditor/Editor/UnityEditor.TreeEditor.dll
+D:/Program Files/Unity56/Editor/Data/UnityExtensions/Unity/UnityAnalytics/Editor/UnityEditor.Analytics.dll
+D:/Program Files/Unity56/Editor/Data/UnityExtensions/Unity/UnityHoloLens/Editor/UnityEditor.HoloLens.dll
+D:/Program Files/Unity56/Editor/Data/UnityExtensions/Unity/UnityPurchasing/Editor/UnityEditor.Purchasing.dll
+D:/Program Files/Unity56/Editor/Data/UnityExtensions/Unity/UnityVR/Editor/UnityEditor.VR.dll
+D:/Program Files/Unity56/Editor/Data/Managed/UnityEditor.Graphs.dll
+D:/Program Files/Unity56/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+D:/Program Files/Unity56/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
+D:/Program Files/Unity56/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll
+C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll

@@ -32,7 +32,7 @@ public class Run : MonoBehaviour
 		//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 		//这个DLL文件是直接编译HotFix_Project.sln生成的，已经在项目中设置好输出目录为StreamingAssets，在VS里直接编译即可生成到对应目录，无需手动拷贝
 #if UNITY_ANDROID
-        WWW www = new WWW(Application.streamingAssetsPath + "/HotFix_Lib.dll");
+        WWW www = new WWW(Application.streamingAssetsPath + "/HotFixProto.dll");
 #else
 		WWW www = new WWW("file:///" + Application.streamingAssetsPath + "/HotFixProto.dll");
 #endif
@@ -45,7 +45,7 @@ public class Run : MonoBehaviour
 
 		//PDB文件是调试数据库，如需要在日志中显示报错的行号，则必须提供PDB文件，不过由于会额外耗用内存，正式发布时请将PDB去掉，下面LoadAssembly的时候pdb传null即可
 #if UNITY_ANDROID
-        www = new WWW(Application.streamingAssetsPath + "/HotFix_Lib.pdb");
+        www = new WWW(Application.streamingAssetsPath + "/HotFixProto.pdb");
 #else
 		www = new WWW("file:///" + Application.streamingAssetsPath + "/HotFixProto.pdb");
 #endif
@@ -70,7 +70,7 @@ public class Run : MonoBehaviour
 		var flashplayer = new ASRuntime.Player();
 		//加载as3编译器生成的protobuf代码。
 #if UNITY_ANDROID
-        www = new WWW(Application.streamingAssetsPath + "/HotFix_Lib.dll");
+        www = new WWW(Application.streamingAssetsPath + "/proto.cswc");
 #else
 		www = new WWW("file:///" + Application.streamingAssetsPath + "/proto.cswc");
 #endif

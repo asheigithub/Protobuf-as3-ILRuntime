@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2017
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AS3ProtoBuf_Unity", "AS3ProtoBuf_Unity.csproj", "{26F208BB-2D90-B1CE-ED24-AACB6DAAD51D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AS3ProtoBuf_Unity.Editor", "AS3ProtoBuf_Unity.Editor.csproj", "{0BA5A735-C7FF-1CC1-DD93-46EFA1603802}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotFixProto", "..\HotFixProto\HotFixProto.csproj", "{F5A045B0-72C8-4546-811C-D6431E283AF9}"
 EndProject
 Global
@@ -15,6 +17,10 @@ Global
 		{26F208BB-2D90-B1CE-ED24-AACB6DAAD51D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26F208BB-2D90-B1CE-ED24-AACB6DAAD51D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{26F208BB-2D90-B1CE-ED24-AACB6DAAD51D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BA5A735-C7FF-1CC1-DD93-46EFA1603802}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BA5A735-C7FF-1CC1-DD93-46EFA1603802}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BA5A735-C7FF-1CC1-DD93-46EFA1603802}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BA5A735-C7FF-1CC1-DD93-46EFA1603802}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F5A045B0-72C8-4546-811C-D6431E283AF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F5A045B0-72C8-4546-811C-D6431E283AF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5A045B0-72C8-4546-811C-D6431E283AF9}.Release|Any CPU.ActiveCfg = Release|Any CPU

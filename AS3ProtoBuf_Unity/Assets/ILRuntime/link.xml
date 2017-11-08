@@ -2,5 +2,6 @@
   <assembly fullname="Assembly-CSharp" preserve="all"/>
   <assembly fullname="UnityEngine" preserve="all"/>
   <assembly fullname="mscorlib" preserve="all"/>
-  
+  <assembly fullname="ASBinCode" preserve="all"/>
+  <assembly fullname="ASRuntime" preserve="all"/>
 </linker>
