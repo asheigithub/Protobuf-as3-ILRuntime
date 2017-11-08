@@ -1,2 +1,5 @@
-
+AS3ProtoBuf_Unity/Library/
+AS3ProtoBuf_Unity/Temp/
 *.ide
+AS3ProtoBuf_Unity/test-1.0-v1.symbols.zip
+AS3ProtoBuf_Unity/test.apk
