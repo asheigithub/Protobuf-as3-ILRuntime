@@ -67,11 +67,13 @@ public class Run : MonoBehaviour
 		//***创建flashplayer***
 		//***我修改了Appdomain的代码，让Appdomain保存一个as3运行时的引用。这样可以避免静态变量。
 
-		var flashplayer = new ASRuntime.Player();
+		var flashplayer = new ASRuntime.Player(new Assets.AS3Proto.UnityOutput());
 		//加载as3编译器生成的protobuf代码。
 #if UNITY_ANDROID
-        www = new WWW(Application.streamingAssetsPath + "/proto.cswc");
+		//www = new WWW(Application.streamingAssetsPath + "/as3test.cswc");// "/proto.cswc");
+		www = new WWW(Application.streamingAssetsPath +  "/proto.cswc");
 #else
+		www = new WWW("file:///" + Application.streamingAssetsPath + "/as3test.cswc");// "/proto.cswc");
 		www = new WWW("file:///" + Application.streamingAssetsPath + "/proto.cswc");
 #endif
 		while (!www.isDone)
@@ -85,10 +87,11 @@ public class Run : MonoBehaviour
 
 		www.Dispose();
 
-
-
 		InitializeILRuntime();
 		OnHotFixLoaded();
+
+
+		
 	}
 
 	unsafe void InitializeILRuntime()
@@ -111,7 +114,7 @@ public class Run : MonoBehaviour
 		var hfMain = appdomain.GetType("HotFixProto.Main");
 		s_HFInitialize = hfMain.GetMethod("Initialize", 0);
 		s_HFUpdate = hfMain.GetMethod("Update", 0);
-		appdomain.Invoke(s_HFInitialize, hfMain, null);
+		appdomain.Invoke(s_HFInitialize, null, null);
 
 		InitedILRuntime = true;
 	}

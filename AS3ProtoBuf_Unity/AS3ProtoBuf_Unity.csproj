@@ -92,6 +92,7 @@
   <ItemGroup>
     <Compile Include="Assets\AS3Proto\Message.cs" />
     <Compile Include="Assets\AS3Proto\MessageAdapter.cs" />
+    <Compile Include="Assets\AS3Proto\UnityOutput.cs" />
     <Compile Include="Assets\DebugLogRedirection.cs" />
     <Compile Include="Assets\ILRuntime\CLR\Method\CLRMethod.cs" />
     <Compile Include="Assets\ILRuntime\CLR\Method\ExceptionHandler.cs" />
@@ -151,10 +152,8 @@
     <Compile Include="Assets\ILRuntime\Generated\System_Single_Binding.cs" />
     <Compile Include="Assets\ILRuntime\Generated\System_String_Binding.cs" />
     <Compile Include="Assets\ILRuntime\Generated\System_Text_UTF8Encoding_Binding.cs" />
-    <Compile Include="Assets\ILRuntime\Generated\UnityEngine_AnimationCurve_Binding.cs" />
     <Compile Include="Assets\ILRuntime\Generated\UnityEngine_Debug_Binding.cs" />
     <Compile Include="Assets\ILRuntime\Generated\UnityEngine_GameObject_Binding.cs" />
-    <Compile Include="Assets\ILRuntime\Generated\UnityEngine_Keyframe_Binding.cs" />
     <Compile Include="Assets\ILRuntime\Generated\UnityEngine_Object_Binding.cs" />
     <Compile Include="Assets\ILRuntime\Generated\UnityEngine_Quaternion_Binding.cs" />
     <Compile Include="Assets\ILRuntime\Generated\UnityEngine_RectTransform_Binding.cs" />
@@ -162,7 +161,6 @@
     <Compile Include="Assets\ILRuntime\Generated\UnityEngine_Transform_Binding.cs" />
     <Compile Include="Assets\ILRuntime\Generated\UnityEngine_Vector2_Binding.cs" />
     <Compile Include="Assets\ILRuntime\Generated\UnityEngine_Vector3_Binding.cs" />
-    <Compile Include="Assets\ILRuntime\Generated\UnityEngine_WrapMode_Binding.cs" />
     <Compile Include="Assets\ILRuntime\Other\ByReferenceKeyComparer.cs" />
     <Compile Include="Assets\ILRuntime\Other\DelegateExportAttribute.cs" />
     <Compile Include="Assets\ILRuntime\Other\NeedAdaptorAttribute.cs" />

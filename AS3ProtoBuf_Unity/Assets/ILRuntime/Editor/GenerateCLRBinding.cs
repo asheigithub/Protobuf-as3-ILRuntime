@@ -86,11 +86,6 @@ public class ILRuntimeCLRBinding
 		types.Add(typeof(GC));
 
 		types.Add(typeof(UnityEngine.Debug));
-		
-
-		types.Add(typeof(AnimationCurve));
-		types.Add(typeof(Keyframe));
-		types.Add(typeof(WrapMode));
 
 		ILRuntime.Runtime.CLRBinding.BindingCodeGenerator.GenerateBindingCode(types, "Assets/ILRuntime/Generated");
 	}

@@ -150,7 +150,7 @@ namespace AS3_2_CSharp_Compiler
 
 
 				var analyser = new ASTool.AS3FileGrammarAnalyser(proj, src.Value);
-				if (!analyser.Analyse(grammar, tree)) //生成项目的语法树
+				if (!analyser.Analyse(tree)) //生成项目的语法树
 				{
 					Console.WriteLine(analyser.err.ToString());
 					Console.WriteLine("语义分析失败!");

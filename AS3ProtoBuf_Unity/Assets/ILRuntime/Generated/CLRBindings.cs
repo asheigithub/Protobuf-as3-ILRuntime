@@ -69,9 +69,6 @@ namespace ILRuntime.Runtime.Generated
             ASRuntime_Player_Binding.Register(app);
             System_GC_Binding.Register(app);
             UnityEngine_Debug_Binding.Register(app);
-            UnityEngine_AnimationCurve_Binding.Register(app);
-            UnityEngine_Keyframe_Binding.Register(app);
-            UnityEngine_WrapMode_Binding.Register(app);
         }
     }
 }

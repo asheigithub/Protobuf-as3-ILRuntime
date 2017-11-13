@@ -4,16 +4,43 @@ using System.Text;
 
 namespace HotFixProto
 {
-    public class Main
-    {
-		public void Initialize()
+	public class Main
+	{
+		public static void Initialize()
 		{
 			Test1();
 			Test2();
 			Test3();
 			Test4();
 			Test5();
+
+			//DateTime d = DateTime.Now;
+
+			//for (int i = 0; i < 1000000; i++)
+			//{
+			//	blank();
+			//}
+
+			////var b = fibonacci_recursion(30);
+
+			//UnityEngine.Debug.Log("ILRUNTIME :" + (DateTime.Now - d).TotalMilliseconds.ToString());
+			//UnityEngine.Debug.Log(b.ToString());
+			
 		}
+		//static int b = 0;
+		//static void blank()
+		//{
+		//	++b;
+		//}
+
+		//static int fibonacci_recursion(int n)
+		//{
+		//	if (n <= 2)
+		//		return 1;
+
+		//	return fibonacci_recursion(n - 1) + fibonacci_recursion(n - 2);
+		//}
+
 
 		private static  void Test1()
 		{
