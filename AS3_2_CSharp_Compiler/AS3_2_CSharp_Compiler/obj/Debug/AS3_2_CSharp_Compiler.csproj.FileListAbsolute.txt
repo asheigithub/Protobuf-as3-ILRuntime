@@ -29,7 +29,6 @@ F:\protobuf-as3-unity\Protobuf-as3-ILRuntime\AS3_2_CSharp_Compiler\AS3_2_CSharp_
 F:\protobuf-as3-unity\Protobuf-as3-ILRuntime\AS3_2_CSharp_Compiler\AS3_2_CSharp_Compiler\bin\Debug\AS3_2_CSharp_Compiler.exe.config
 F:\protobuf-as3-unity\Protobuf-as3-ILRuntime\AS3_2_CSharp_Compiler\AS3_2_CSharp_Compiler\bin\Debug\AS3_2_CSharp_Compiler.exe
 F:\protobuf-as3-unity\Protobuf-as3-ILRuntime\AS3_2_CSharp_Compiler\AS3_2_CSharp_Compiler\bin\Debug\AS3_2_CSharp_Compiler.pdb
-F:\protobuf-as3-unity\Protobuf-as3-ILRuntime\AS3_2_CSharp_Compiler\AS3_2_CSharp_Compiler\bin\Debug\ASBinCode.dll
 F:\protobuf-as3-unity\Protobuf-as3-ILRuntime\AS3_2_CSharp_Compiler\AS3_2_CSharp_Compiler\bin\Debug\ASCompiler.dll
 F:\protobuf-as3-unity\Protobuf-as3-ILRuntime\AS3_2_CSharp_Compiler\AS3_2_CSharp_Compiler\bin\Debug\ASRuntime.dll
 F:\protobuf-as3-unity\Protobuf-as3-ILRuntime\AS3_2_CSharp_Compiler\AS3_2_CSharp_Compiler\bin\Debug\ASTool.dll

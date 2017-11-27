@@ -16,30 +16,43 @@ namespace HotFixProto
 
 			//DateTime d = DateTime.Now;
 
-			//for (int i = 0; i < 1000000; i++)
+			//for (int i = 0; i < 500000; i++)
 			//{
-			//	blank();
+			//	//if (i * 2 == 0)
+			//		b += i;
+			//	//blank(i);
 			//}
 
-			////var b = fibonacci_recursion(30);
+			//for i = 0, 1000000, 1 do
+			//		total = total + i - (i / 2) * (i + 3) / (i + 5)
+
+			//end
+			//double total = 0;
+			//for (double i = 0; i < 1000000; i++)
+			//{
+			//	total = total + i - (i / 2) * (i + 3) / (i + 5);
+			//}
+
+
+			//var b = fibonacci_recursion(30);
 
 			//UnityEngine.Debug.Log("ILRUNTIME :" + (DateTime.Now - d).TotalMilliseconds.ToString());
-			//UnityEngine.Debug.Log(b.ToString());
-			
+			//UnityEngine.Debug.Log(total.ToString());
+
 		}
-		//static int b = 0;
-		//static void blank()
-		//{
-		//	++b;
-		//}
+		static int b = 0;
+		static void blank(int p)
+		{
+			++b;
+		}
 
-		//static int fibonacci_recursion(int n)
-		//{
-		//	if (n <= 2)
-		//		return 1;
+		static int fibonacci_recursion(int n)
+		{
+			if (n <= 2)
+				return 1;
 
-		//	return fibonacci_recursion(n - 1) + fibonacci_recursion(n - 2);
-		//}
+			return fibonacci_recursion(n - 1) + fibonacci_recursion(n - 2);
+		}
 
 
 		private static  void Test1()

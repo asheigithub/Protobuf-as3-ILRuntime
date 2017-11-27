@@ -35,10 +35,6 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ASBinCode, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>.\ASBinCode.dll</HintPath>
-    </Reference>
     <Reference Include="ASCompiler, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>.\ASCompiler.dll</HintPath>
@@ -82,7 +78,6 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="ASBinCode.dll" />
     <Content Include="ASCompiler.dll" />
     <Content Include="ASRuntime.dll" />
     <Content Include="ASTool.dll" />

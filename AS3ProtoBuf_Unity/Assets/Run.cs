@@ -73,7 +73,7 @@ public class Run : MonoBehaviour
 		//www = new WWW(Application.streamingAssetsPath + "/as3test.cswc");// "/proto.cswc");
 		www = new WWW(Application.streamingAssetsPath +  "/proto.cswc");
 #else
-		www = new WWW("file:///" + Application.streamingAssetsPath + "/as3test.cswc");// "/proto.cswc");
+		//www = new WWW("file:///" + Application.streamingAssetsPath + "/as3test.cswc");// "/proto.cswc");
 		www = new WWW("file:///" + Application.streamingAssetsPath + "/proto.cswc");
 #endif
 		while (!www.isDone)
@@ -87,11 +87,22 @@ public class Run : MonoBehaviour
 
 		www.Dispose();
 
+		//flashplayer.run(null);
+
 		InitializeILRuntime();
 		OnHotFixLoaded();
 
+		DateTime d = DateTime.Now;
 
+		double total = 0;
+		for (double i = 0; i < 1000000; i++)
+		{
+			total = total + i - (i / 2) * (i + 3) / (i + 5);
+		}
 		
+		UnityEngine.Debug.Log("C# :" + (DateTime.Now - d).TotalMilliseconds.ToString());
+		UnityEngine.Debug.Log(total.ToString());
+
 	}
 
 	unsafe void InitializeILRuntime()
