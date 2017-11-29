@@ -2,11 +2,13 @@
 
 
 
+
 @del /f/s/q .\as3output
 
 
 
 @protoc.exe --plugin=protoc-gen-as3=.\protoc-gen-as3-1.1.4-bin\protoc-gen-as3.bat --as3_out=.\as3output login.proto base.proto client.proto
+
 
 
 
