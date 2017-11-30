@@ -4,8 +4,6 @@
 
 
 
-
-
 @protoc.exe --plugin=protoc-gen-as3=.\protoc-gen-as3-1.1.4-bin\protoc-gen-as3.bat --as3_out=.\as3output login.proto base.proto client.proto
 
 @echo 将as3编译为字节码并生成C#协议文件
