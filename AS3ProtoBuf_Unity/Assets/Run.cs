@@ -91,18 +91,7 @@ public class Run : MonoBehaviour
 
 		InitializeILRuntime();
 		OnHotFixLoaded();
-
-		DateTime d = DateTime.Now;
-
-		double total = 0;
-		for (double i = 0; i < 1000000; i++)
-		{
-			total = total + i - (i / 2) * (i + 3) / (i + 5);
-		}
 		
-		UnityEngine.Debug.Log("C# :" + (DateTime.Now - d).TotalMilliseconds.ToString());
-		UnityEngine.Debug.Log(total.ToString());
-
 	}
 
 	unsafe void InitializeILRuntime()
